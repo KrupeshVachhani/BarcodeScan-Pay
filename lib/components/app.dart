@@ -1,4 +1,4 @@
-import 'package:barcodescanner/components/Onboarding.dart';
+import 'package:barcodescanner/components/screens/Onboarding.dart';
 import 'package:barcodescanner/utils/Theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

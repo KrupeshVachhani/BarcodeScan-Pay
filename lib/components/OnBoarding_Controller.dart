@@ -1,3 +1,4 @@
+import 'package:barcodescanner/components/screens/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -11,23 +12,27 @@ class OnBoardingController extends GetxController {
   void updatePageIndicator(int index) {
     currentPageIndex.value = index;
   }
+
   void dotNavigationClick(int index) {
     currentPageIndex.value = index;
     pageController.jumpToPage(index);
   }
+
   void nextPage() {
     if (currentPageIndex.value == 2) {
       // You can navigate to the next screen or perform any action when reaching the last page
-      // Get.to(LoginScreen());
+      Get.offAll(const loginScreen());
     } else {
       int nextPage = currentPageIndex.value + 1;
       pageController.animateToPage(
         nextPage,
-        duration: const Duration(milliseconds: 400), // Set the duration (in milliseconds)
+        duration: const Duration(
+            milliseconds: 400), // Set the duration (in milliseconds)
         curve: Curves.easeInOut, // Set the transition curve
       );
     }
   }
+
   void skipPage() {
     int lastPage = 2;
 
@@ -41,6 +46,4 @@ class OnBoardingController extends GetxController {
     // Optional: If you want to update the currentPageIndex immediately
     currentPageIndex.value = lastPage;
   }
-
 }
-

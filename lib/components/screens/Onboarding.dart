@@ -6,10 +6,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:lottie/lottie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../constants/color.dart';
-import '../constants/size.dart';
-import '../utils/device_utility.dart';
+import '../../constants/color.dart';
+import '../../constants/size.dart';
+import '../../utils/device_utility.dart';
 
 class OnBoarding extends StatelessWidget {
   const OnBoarding({Key? key}) : super(key: key);
@@ -26,19 +27,22 @@ class OnBoarding extends StatelessWidget {
             onPageChanged: controller.updatePageIndicator,
             children: const [
               OnBoardPage(
-                image: 'assets/onboard/darkMode.gif',
-                title: "Scan Title 0 ",
-                subtitle: "Scan subtitle 0 ",
+                image: 'assets/onboard/BarcodeScan_Phone_Animation.json',
+                title: "Scan Barcodes ",
+                subtitle:
+                    "Scan and Add Items Instantly to Your \nShopping List!!",
+                // "Effortless Barcode Scanning for Smart Shopping!",
               ),
               OnBoardPage(
-                image: 'assets/onboard/darkMode.gif',
-                title: "Scan Title 1 ",
-                subtitle: "Scan subtitle 1 ",
+                image: 'assets/onboard/ShoppingList_Animation.json',
+                title: "Complete your Shopping list",
+                subtitle: "Turn Scanned Items into a Perfect \nShopping Plan!!",
               ),
               OnBoardPage(
-                image: 'assets/onboard/darkMode.gif',
-                title: "Scan Title 2 ",
-                subtitle: "Scan subtitle 2 ",
+                image: 'assets/onboard/Payment_Done_Animation.json',
+                title: "Make a Payment",
+                subtitle: "Checkout in Style - Fast and Hassle-Free!",
+                // "Tap, Pay, Enjoy - Effortless Payments for Happy Shopping!",
               ),
             ],
           ),
@@ -119,9 +123,12 @@ class SkipButton extends StatelessWidget {
       top: TDeviceUtility.getAppBarHeight(),
       right: TSizes.defaultSpacing,
       child: TextButton(
-        style: TextButton.styleFrom(backgroundColor: TColors.lightContainer ),
+        style: TextButton.styleFrom(backgroundColor: TColors.lightContainer),
         onPressed: () => OnBoardingController.instance.skipPage(),
-        child: const Text('Skip' , style: TextStyle(fontSize: TSizes.md),),
+        child: const Text(
+          'Skip',
+          style: TextStyle(fontSize: TSizes.md, color: TColors.textPrimary),
+        ),
       ),
     );
   }
@@ -143,20 +150,22 @@ class OnBoardPage extends StatelessWidget {
       padding: const EdgeInsets.all(TSizes.defaultSpacing),
       child: Column(
         children: [
-          Image(
-            width: THelperFunctions.screenWidth() * 0.6,
-            height: THelperFunctions.screenHeight() * 0.6,
-            image: AssetImage(image),
-          ),
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineMedium,
-            textAlign: TextAlign.center,
-          ),
+          Lottie.asset(image,
+              height: THelperFunctions.screenWidth() * 1.4,
+              width: THelperFunctions.screenWidth() * 0.8),
+          Text(title,
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineMedium
+                  ?.copyWith(fontSize: TSizes.fontSizeLg + 7),
+              textAlign: TextAlign.center),
           const SizedBox(height: TSizes.spaceBtwItems),
           Text(
             subtitle,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium
+                ?.copyWith(fontSize: TSizes.fontSizeMd),
             textAlign: TextAlign.center,
           ),
         ],

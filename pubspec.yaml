@@ -23,10 +23,17 @@ dependencies:
   get_storage: ^2.1.1
   intl: ^0.17.0
   iconsax: ^0.0.8
+  lottie: ^2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/app_logo.jpg"  
 
   flutter_lints: ^2.0.0
   flutter_native_splash: ^2.3.9
