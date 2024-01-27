@@ -1,6 +1,6 @@
 import 'dart:ffi';
 
-import 'package:barcodescanner/components/OnBoarding_Controller.dart';
+import 'package:barcodescanner/components/screens/onboarding/OnBoarding_Controller.dart';
 import 'package:barcodescanner/utils/helper_functions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +8,9 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../constants/color.dart';
-import '../../constants/size.dart';
-import '../../utils/device_utility.dart';
+import '../../../constants/color.dart';
+import '../../../constants/size.dart';
+import '../../../utils/device_utility.dart';
 
 class OnBoarding extends StatelessWidget {
   const OnBoarding({Key? key}) : super(key: key);

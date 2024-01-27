@@ -1,4 +1,4 @@
-import 'package:barcodescanner/components/screens/login.dart';
+import 'package:barcodescanner/components/screens/login/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
