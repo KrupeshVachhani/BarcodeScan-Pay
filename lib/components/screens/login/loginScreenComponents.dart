@@ -160,7 +160,7 @@ class CreateAnAccountButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-          onPressed: () => Get.to(() => const SignUpPage()),
+          onPressed: () => Get.to(() => SignUpPage()),
           child: Text(
             'Create an account',
             style: TextStyle(color: dark ? TColors.white : TColors.black),
