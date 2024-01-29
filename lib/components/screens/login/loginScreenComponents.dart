@@ -1,6 +1,7 @@
 import 'package:barcodescanner/components/screens/singup/signup.dart';
 import 'package:barcodescanner/constants/color.dart';
 import 'package:barcodescanner/constants/size.dart';
+import 'package:barcodescanner/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -186,7 +187,7 @@ class SignInButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () => Get.to(() => NavigationMenu()),
         child: const Text('Sign in'),
       ),
     );
